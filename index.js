@@ -10,5 +10,13 @@ function getPaycheck(baseWage, overtimeHours = null) {
   return { grossPay: currentEarnings, netPay: net };
 }
 
+pay = getPaycheck(24.5, 20);
 
-for (let pound = '#'; pound.length < 7; )
+// Triangle Loop - Challenge #1
+for (let pound = '#'; pound.length < 8; pound += '#') {
+  console.log(pound);
+}
+
+// FizzBuzz - Challenge #2
+
+// Checkerboard - Challenge #3
