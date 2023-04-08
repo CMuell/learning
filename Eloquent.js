@@ -21,7 +21,27 @@ if (1 + 1 == 2 && 10 * 10 > 50) {
 // ternary operator => (boolean ? true : false)
 const eq = 5 < 3;
 console.log(eq ? `this is ${true}` : `this is ${false}`);
+/*
+  OR operator: ||
+  returns left value if statement converted to `true`
+  returns right value if statement converted to `false`
 
-// OR operator: ||
-// returns left value if statement converted to `true`
-// returns right value if statement converted to `false`
+  for (binding definition ; condition ; binding update / increment)
+  example: for (number = 0; number <= 12; number += 1)
+*/
+
+// switch statement
+switch (prompt('Choose 1, 2, or 3')) {
+  case 1: // case label
+    console.log(1);
+    break; // important. If `break` is absent, the program will continue until the next break, regardless of label.
+  case 2:
+    console.log(2);
+  case 3:
+    console.log(3);
+    console.log('forgot to add a break!');
+    break;
+  default:
+    console.log(`Please enter 1, 2, or 3.`);
+    break;
+}

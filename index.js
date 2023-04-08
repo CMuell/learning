@@ -10,6 +10,5 @@ function getPaycheck(baseWage, overtimeHours = null) {
   return { grossPay: currentEarnings, netPay: net };
 }
 
-myPay = getPaycheck(24.5, 20);
 
-console.log(`Gross Pay: $${myPay.grossPay}\nNet Pay: $${myPay.netPay}`);
+for (let pound = '#'; pound.length < 7; )
