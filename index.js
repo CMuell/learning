@@ -52,7 +52,9 @@ first row starts with ` `
 function checkerboard() {
   let board = ``;
 
-  for (let n = 0; n <= 8; n++) {
+  //for (let row = 0; row <=)
+
+  for (let n = 1; n <= 8; n++) {
     switch (n % 2 == 0 ? true : false) {
       case true:
         board += ` `;
@@ -66,3 +68,7 @@ function checkerboard() {
 }
 
 console.log(checkerboard());
+
+/*
+
+if `row` is even, the first character in the string is ` `. 
