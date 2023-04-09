@@ -50,20 +50,19 @@ first row starts with ` `
 */
 
 function checkerboard() {
-  board = ``;
-  pound = [];
-  blank = [];
+  let board = ``;
 
-  for (let n = 0; n < 8; n++) {
+  for (let n = 0; n <= 8; n++) {
     switch (n % 2 == 0 ? true : false) {
       case true:
-        console.log(`even: ${n}`);
+        board += ` `;
         break;
       case false:
-        console.log(`odd: ${n}`);
+        board += `#`;
         break;
     }
   }
+  return board;
 }
 
-checkerboard();
+console.log(checkerboard());
