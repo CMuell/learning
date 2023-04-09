@@ -18,5 +18,52 @@ for (let pound = '#'; pound.length < 8; pound += '#') {
 }
 
 // FizzBuzz - Challenge #2
+function fizzBuzz() {
+  arr = [];
+  for (let n = 1; n <= 10 ** 2; n++) {
+    switch (n % 3 == 0 ? true : false) {
+      case true:
+        arr[n - 1] = 'Fizz';
+        break;
+      case false:
+        switch (n % 5 == 0 ? true : false) {
+          case true:
+            arr[n - 1] = 'Buzz';
+            break;
+          case false:
+            arr[n - 1] = n;
+            break;
+        }
+    }
+  }
+  return arr;
+}
+
+console.log(fizzBuzz());
 
 // Checkerboard - Challenge #3
+/* 
+8 x 8 grid
+single string
+grid row terminated with \n
+first row starts with ` `
+*/
+
+function checkerboard() {
+  board = ``;
+  pound = [];
+  blank = [];
+
+  for (let n = 0; n < 8; n++) {
+    switch (n % 2 == 0 ? true : false) {
+      case true:
+        console.log(`even: ${n}`);
+        break;
+      case false:
+        console.log(`odd: ${n}`);
+        break;
+    }
+  }
+}
+
+checkerboard();
