@@ -72,3 +72,32 @@ console.log(checkerboard());
 /*
 
 if `row` is even, the first character in the string is ` `. 
+
+*/
+
+// target = number to reach
+function findSolution(target) {
+  function find(current, history) {
+    // if binding `current` is equal to `target`, the solution has been reached
+    // and we will return `history` which is a string containing the steps used to reach the target
+    if (current == target) {
+      return history;
+    }
+    // if binding `current` is larger than `target`, we will return `null` since
+    // any further operation will also be greater than `target`
+    else if (current > target) {
+      return null;
+    }
+    // finally, if the binding `current` is less than `target`, we will call this function from
+    // within itself.
+    else {
+      return (
+        find(current + 5, `(${history} + 5)`) ||
+        find(current * 3, `(${history} * 3)`)
+      );
+    }
+  }
+  return find(1, '1');
+}
+
+console.log(findSolution(48));
