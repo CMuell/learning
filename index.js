@@ -49,16 +49,25 @@ grid row terminated with \n
 first row starts with ` `
 */
 
-function checkerboard() {
+function checkerboard(maxRow, maxColumn) {
   let board = '',
     pattern = '';
-  function writeRow(current, goal) {}
+  function writeRow(current, goal) {
+    if (current == goal) {
+      return board;
+    } else if (current > goal) {
+      return null;
+    } else {
+      // If the current row # is less than the goal row #
+    }
+  }
   function even(n) {
-    pattern = ' #';
+    return ' #';
   }
   function odd(n) {
-    pattern = '# ';
+    return '# ';
   }
+  writeRow(1, 1);
 }
 
 /*
