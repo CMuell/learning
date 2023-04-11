@@ -153,8 +153,12 @@ function isEven(num, sw) {
     }
   }
 }
-funcResult = isEven(2000, 'ifelse');
-funcResult2 = isEven(2000, 'switchcase');
+
+myNumber = 8367;
+funcResult = isEven(myNumber, 'ifelse');
+funcResult2 = isEven(myNumber, 'switchcase');
+
+// End
 
 function execute(num) {
   console.log(findSolution(num));
