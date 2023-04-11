@@ -158,6 +158,24 @@ myNumber = 8367;
 funcResult = isEven(myNumber, 'ifelse');
 funcResult2 = isEven(myNumber, 'switchcase');
 
+/* Bean Counting
+
+Write a function countBs that takes a string as its only argument 
+and returns a number that indicates how many uppercase `b` characters there are in the string.
+*/
+
+function countChars(text, char) {
+  theBList = 0;
+  for (letter in text) {
+    if (text[letter] == char) {
+      theBList++;
+    }
+  }
+  console.log(theBList);
+}
+
+countChars('This Big bulky Burger begrudgingly Burns', 'B');
+
 // End
 
 function execute(num) {
