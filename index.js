@@ -104,6 +104,48 @@ function min(a, b) {
 
 // Challenge #5
 
+/* 
+  Zero is even,
+  One is odd,
+  For any other number `N`, its evenness is the same as `N - 2`
+*/
+
+function isEven(num, sw) {
+  num = Math.abs(num);
+
+  if (sw == 'ifelse') {
+    recIfElse(num);
+  } else if (sw == 'switchcase') {
+    recSwitch(num);
+  }
+
+  // recursive function using switch case
+  function recSwitch(current) {
+    switch (current == 0 ? true : false) {
+      case true:
+        return console.log(true);
+      case false:
+        switch (current == 1 ? true : false) {
+          case true:
+            return console.log(false);
+          case false:
+            recSwitch(current - 2);
+        }
+    }
+  }
+  // recursive function using if else
+  function recIfElse(current) {
+    if (current == 0) {
+      return console.log(true);
+    } else if (current == 1) {
+      return console.log(false);
+    } else {
+      rec(current - 2);
+    }
+  }
+}
+isEven(23, 'ifelse');
+
 function execute(num) {
   console.log(findSolution(num));
   // target = number to reach
