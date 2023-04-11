@@ -111,6 +111,7 @@ function min(a, b) {
 */
 
 function isEven(num, sw) {
+  var startTime = performance.now();
   num = Math.abs(num);
 
   if (sw == 'ifelse') {
@@ -123,7 +124,11 @@ function isEven(num, sw) {
   function recSwitch(current) {
     switch (current == 0 ? true : false) {
       case true:
-        return console.log(true);
+        var endTime = performance.now();
+        return {
+          result: console.log(true),
+          time: console.log(`Finished in ${endTime - startTime} ms`),
+        };
       case false:
         switch (current == 1 ? true : false) {
           case true:
@@ -136,15 +141,20 @@ function isEven(num, sw) {
   // recursive function using if else
   function recIfElse(current) {
     if (current == 0) {
-      return console.log(true);
+      var endTime2 = performance.now();
+      return {
+        result: console.log(true),
+        time: console.log(`Finished in ${endTime2 - startTime} ms`),
+      };
     } else if (current == 1) {
       return console.log(false);
     } else {
-      rec(current - 2);
+      recIfElse(current - 2);
     }
   }
 }
-isEven(23, 'ifelse');
+funcResult = isEven(2000, 'ifelse');
+funcResult2 = isEven(2000, 'switchcase');
 
 function execute(num) {
   console.log(findSolution(num));
