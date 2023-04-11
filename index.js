@@ -10,7 +10,7 @@ function getPaycheck(baseWage, overtimeHours = null) {
   return { grossPay: currentEarnings, netPay: net };
 }
 
-pay = getPaycheck(24.5, 20);
+//pay = getPaycheck(24.5, 20);
 
 // Triangle Loop - Challenge #1
 for (let pound = '#'; pound.length < 8; pound += '#') {
@@ -39,7 +39,7 @@ function fizzBuzz() {
   return arr;
 }
 
-console.log(fizzBuzz());
+//console.log(fizzBuzz());
 
 // Checkerboard - Challenge #3
 /* 
@@ -47,34 +47,62 @@ console.log(fizzBuzz());
 single string
 grid row terminated with \n
 first row starts with ` `
+
+Each row needs to be written in order
+Each string character needs to be concatenated based on whether it is an even or odd array index.
+When each string character of the row is concatenated, `\n` must be added. 
+The row should then be incremented.
+This process should continue until the current row == the target rows.
 */
 
-function checkerboard(maxRow, maxColumn) {
-  let board = '',
-    pattern = '';
-  function writeRow(current, goal) {
-    if (current == goal) {
-      return board;
-    } else if (current > goal) {
-      return null;
+function checkerboard(grid) {
+  function row(rowNumber, rowLength) {
+    if (rowNumber % 2 == 0) {
+      return even(rowLength);
     } else {
-      // If the current row # is less than the goal row #
+      return odd(rowLength);
     }
   }
-  function even(n) {
-    return ' #';
+  function even(rowLength) {
+    rowString = ``;
+    for (let i = 0; i < rowLength; i++) {
+      if (i % 2 == 0) {
+        rowString += ` `;
+      } else {
+        rowString += '#';
+      }
+    }
+    return rowString;
   }
-  function odd(n) {
-    return '# ';
+  function odd(rowLength) {
+    rowString = ``;
+    for (let i = 0; i < rowLength; i++) {
+      if (i % 2 == 0) {
+        rowString += '#';
+      } else {
+        rowString += ' ';
+      }
+    }
+    return rowString;
   }
-  writeRow(1, 1);
+
+  let target = grid,
+    boardString = ``;
+
+  for (let rowNum = 0; rowNum < target; rowNum++) {
+    boardString += `${row(rowNum, target)}\n`;
+  }
+  return boardString;
 }
 
-/*
+// Challenge #4
 
-if `row` is even, the first character in the string is ` `. 
+function min(a, b) {
+  return Math.min(a, b);
+}
+//console.log(min(2, 4));
 
-*/
+// Challenge #5
 
 function execute(num) {
   console.log(findSolution(num));
